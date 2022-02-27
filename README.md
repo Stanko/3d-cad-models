@@ -4,6 +4,8 @@ I started learning to model using [JSCAD](https://github.com/jscad/OpenJSCAD.org
 
 ### Mounting bracket
 
+Universal mounting bracket. I made these to mount power strip and monitor power supply under the desk.
+
 [![](/mounting-bracket/preview.png)](https://www.openjscad.xyz/?uri=https://raw.githubusercontent.com/Stanko/jscad-models/dev/mounting-bracket/index.js)
 
 [Edit and download on openjscad.xyz](https://www.openjscad.xyz/?uri=https://raw.githubusercontent.com/Stanko/jscad-models/dev/mounting-bracket/index.js)
