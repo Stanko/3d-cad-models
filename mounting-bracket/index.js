@@ -1,7 +1,5 @@
 const { cuboid, cylinderElliptic } = require('@jscad/modeling').primitives;
 const { union, subtract } = require('@jscad/modeling').booleans;
-const { colorize } = require('@jscad/modeling').colors;
-const { vectorText } = require('@jscad/modeling').text;
 
 const main = (params) => {
   const halfThickness = params.wallThickness / 2;
