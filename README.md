@@ -12,4 +12,4 @@ I started learning to model using [JSCAD](https://github.com/jscad/OpenJSCAD.org
 
 This one won't be useful to anyone else I guess. Small cover to hide water heater switch so guests don't press it accidentally.
 
-![](/switch-cover/preview.png)]
+![](/switch-cover/preview.png)
