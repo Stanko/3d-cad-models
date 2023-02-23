@@ -1,25 +1,6 @@
-# My JSCAD parametric 3d models
+# My 3D CAD models
 
-I started learning to model using [JSCAD](https://github.com/jscad/OpenJSCAD.org). This repo will contain my models with direct links for editing and STL file download.
-
-### Mounting bracket
-
-Universal mounting bracket. I made these to mount power strip and monitor power supply under the desk.
-
-[![](/mounting-bracket/preview.png)](https://www.openjscad.xyz/?uri=https://raw.githubusercontent.com/Stanko/jscad-models/dev/mounting-bracket/index.js)
-
-[Edit and download on openjscad.xyz](https://www.openjscad.xyz/?uri=https://raw.githubusercontent.com/Stanko/jscad-models/dev/mounting-bracket/index.js)
-
-### Headphones hanger hook
-
-Universal headphones hanger. Can be used for tables of shelves. Inspired by [this design](https://www.thingiverse.com/thing:2775244).
-
-[![](/headphones-hanger/preview.png)](https://www.openjscad.xyz/?uri=https://raw.githubusercontent.com/Stanko/jscad-models/dev/headphones-hanger/index.js)
-
-[Edit and download on openjscad.xyz](https://www.openjscad.xyz/?uri=https://raw.githubusercontent.com/Stanko/jscad-models/dev/headphones-hanger/index.js)
-
-### Water heater switch cover
-
-This one won't be useful to anyone else I guess. Small cover to hide water heater switch so guests don't press it accidentally.
-
-![](/switch-cover/preview.png)
+| Name                                      | Format   | Preview                                                                | Source code                                                              | Edit |
+| ----------------------------------------- | -------- | ---------------------------------------------------------------------- | ------------------------------------------------------------------------ | ---- |
+| Axidraw pen holder                        | OpenSCAD | ![](./axidraw-pen-holder/preview.png)                                  | [axidraw-pen-holder.scad](./axidraw-pen-holder/pigma-micron-holder.scad) |
+| Spring loaded pen holder for pen plotters | replicad | ![spring-loaded-pen-holder.js](./spring-loaded-pen-holder/preview.png) | [](./spring-loaded-pen-holder/spring-loaded-pen-holder.js)               |      |
