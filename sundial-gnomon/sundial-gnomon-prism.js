@@ -2,6 +2,7 @@ const defaultParams = {
   r: 90,
   angle: 42.3167,
   width: 10,
+  topWidth: 1,
   cut: 10,
   curveHeightFactor: 1,
   curveDepthFactor: 0.75,
@@ -16,7 +17,7 @@ const fit = 0.1;
 /** @type {function(replicadLib, typeof defaultParams): any} */
 const main = (
   { draw, makeBaseBox },
-  { r, angle, width, cut, curveHeightFactor, curveDepthFactor }
+  { r, angle, width, cut, curveHeightFactor, curveDepthFactor, topWidth }
 ) => {
   const angleInRad = (angle / 180) * Math.PI;
 
@@ -30,9 +31,17 @@ const main = (
     position: Math.cos(angleInRad) * r,
   };
 
-  const triangle1 = draw()
-    .movePointerTo([t1.width / 2, 0])
-    .lineTo([0, t1.height])
+  let triangle1 = draw().movePointerTo([t1.width / 2, 0]);
+
+  if (topWidth) {
+    triangle1 = triangle1
+      .lineTo([topWidth * 0.5, t1.height])
+      .lineTo([-topWidth * 0.5, t1.height]);
+  } else {
+    triangle1 = triangle1.lineTo([0, t1.height]);
+  }
+
+  triangle1 = triangle1
     .lineTo([-t1.width / 2, 0])
     .close()
     .sketchOnPlane('YZ');
@@ -40,6 +49,7 @@ const main = (
   const triangle2 = draw()
     .movePointerTo([t2.width / 2, 0])
     .lineTo([0, t2.height])
+    .lineTo([-nothing, t2.height])
     .lineTo([-t2.width / 2, 0])
     .close()
     .sketchOnPlane('YZ', t2.position);
