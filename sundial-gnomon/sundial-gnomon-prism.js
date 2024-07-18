@@ -100,7 +100,7 @@ const main = (
     // },
     {
       shape: base.cut(box).cut(curve),
-      // color: '#a4a',
+      color: '#3c6',
     },
   ];
 };

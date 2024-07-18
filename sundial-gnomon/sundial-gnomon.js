@@ -1,21 +1,22 @@
-// Work in progress
+// TODO - rename parameter and variable names
 
 const defaultParams = {
   angle: 45,
   radius: 40,
-  length: 200,
-  thickness: 10,
-  base: 20,
+  totalLength: 100,
+  shaftRadius: 5,
   wallThickness: 1.5,
   screwShaftDiameter: 2,
   screwHeadDiameter: 4.5,
+  topRadius: 8,
+  topHeight: 20,
 };
 
 const nothing = 0.001;
 const fit = 0.1;
 
-const innerPipeConnection = 15;
-const outerPipeConnection = innerPipeConnection * 0.9;
+const shaftConnectionLonger = 6;
+const shaftConnectionShorter = shaftConnectionLonger * 0.8;
 
 /** @typedef { typeof import("replicad") } replicadLib */
 /** @type {function(replicadLib, typeof defaultParams): any} */
@@ -24,11 +25,13 @@ const main = (
   {
     angle,
     radius,
-    length,
-    thickness,
+    totalLength,
     wallThickness,
     screwShaftDiameter,
     screwHeadDiameter,
+    topRadius,
+    topHeight,
+    shaftRadius,
   }
 ) => {
   // Triangle
@@ -37,6 +40,8 @@ const main = (
 
   const x = Math.cos(angleInRad) * radius;
   const y = Math.sin(angleInRad) * radius;
+
+  const thickness = shaftRadius * 2;
 
   const cutTheTriangle = drawCircle(thickness)
     .sketchOnPlane('XY')
@@ -98,10 +103,17 @@ const main = (
 
   const rodBaseOffset = thickness * 4;
   const rodBaseHeight = radius + rodBaseOffset;
-  const rodBase = drawCircle(thickness / 2 - wallThickness)
-    .sketchOnPlane('XY')
-    .extrude(rodBaseHeight)
-    .translateZ(rodBaseHeight - innerPipeConnection);
+
+  const getRodeBase = (height = rodBaseHeight) => {
+    const rodBase = drawCircle(thickness / 2 - wallThickness)
+      .sketchOnPlane('XY')
+      .extrude(height);
+    return rodBase;
+  };
+
+  const rodBase = getRodeBase().translateZ(
+    rodBaseHeight - shaftConnectionLonger
+  );
 
   const base = drawCircle(thickness / 2)
     .sketchOnPlane('XY')
@@ -117,15 +129,47 @@ const main = (
     .cut(baseScrew2)
     .cut(baseScrewHead2);
 
+  // extension
+
+  const extensionOuterHeight = totalLength - hypotenuse - topHeight;
+  const extensionInneright = extensionOuterHeight + shaftConnectionShorter * 2;
+  const extensionOuter = drawCircle(shaftRadius)
+    .sketchOnPlane('XY')
+    .extrude(extensionOuterHeight);
+  const extensionInner = drawCircle(shaftRadius - wallThickness - fit)
+    .sketchOnPlane('XY')
+    .extrude(extensionInneright)
+    .translateZ(-shaftConnectionShorter);
+
+  // top
+
+  const cone = draw([0, 0])
+    .lineTo([topRadius, 0])
+    .lineTo([0, topHeight])
+    .close()
+    .sketchOnPlane('XZ')
+    .revolve();
+
+  const topCut = getRodeBase(shaftConnectionLonger);
+
   return [
     {
       shape: base,
-      // color: '#345',
+      color: '#56b',
       name: 'Base',
     },
-    // {
-    //   shape: baseScrewHead1,
-    //   color: '#345',
-    // },
+    {
+      shape: extensionOuter
+        .fuse(extensionInner)
+        .translateY(-20)
+        .translateZ(shaftConnectionShorter),
+      color: '#5b6',
+      name: 'Shaft',
+    },
+    {
+      shape: cone.cut(topCut).translateY(20),
+      color: '#b56',
+      name: 'Top',
+    },
   ];
 };
