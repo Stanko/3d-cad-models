@@ -5,22 +5,24 @@ const defaultParams = {};
 /** @typedef { typeof import("replicad") } replicadLib */
 /** @type {function(replicadLib, typeof defaultParams): any} */
 const main = ({ draw, drawRoundedRectangle, makeBaseBox }, {}) => {
-  const tOffset = 3;
-  const tDepth = 10 + tOffset;
-  const tHeight = 5;
-
   const armWidth = 10;
   const armDepth = 1;
-  const armHeight = armDepth * 3;
+  const armHeight = armDepth * 5;
 
-  const ringHeight = 8 + armHeight + fit;
+  const ringHeight = 8 + fit;
   const ringWall = 3;
-  const ringInnerWidth = 40 + fit;
-  const ringInnerDepth = 23 + fit;
+  const ringInnerWidth = 40.3 + fit;
+  const ringInnerDepth = 23.2 + fit;
   const ringInnerRadius = 6;
   const ringOuterWidth = ringInnerWidth + 2 * ringWall;
   const ringOuterDepth = ringInnerDepth + 2 * ringWall;
   const ringOuterRadius = 8;
+
+  const tOffset = 2;
+  const tDepth = 5.5 + ringWall + tOffset;
+  const tHeight = 4.4;
+  const tTopWidth = 3 - fit;
+  const tBottomHeight = 2.1 - fit;
 
   const ringOuter = drawRoundedRectangle(
     ringOuterDepth,
@@ -41,9 +43,9 @@ const main = ({ draw, drawRoundedRectangle, makeBaseBox }, {}) => {
 
   const ring = ringOuter.cut(ringInner);
 
-  const t1 = makeBaseBox(tDepth, 3, tHeight);
-  const t2 = makeBaseBox(tDepth, 5, 2);
-  const t3 = makeBaseBox(tOffset, 3, ringHeight)
+  const t1 = makeBaseBox(tDepth, tTopWidth, tHeight);
+  const t2 = makeBaseBox(tDepth, 5, tBottomHeight);
+  const t3 = makeBaseBox(tOffset, tTopWidth, ringHeight)
     .translateZ(tHeight)
     .translateX((tDepth - tOffset) / -2);
 
@@ -53,7 +55,8 @@ const main = ({ draw, drawRoundedRectangle, makeBaseBox }, {}) => {
     .translateX((tDepth - ringOuterDepth) * 0.5 - tOffset);
 
   const arm1 = draw([0, 0])
-    .lineTo([-armDepth, armHeight * 0.5])
+    .lineTo([-armDepth, armHeight * 0.3])
+    .lineTo([-armDepth, armHeight * 0.6])
     .lineTo([0, armHeight])
     .close()
     .sketchOnPlane('XZ')
@@ -63,7 +66,8 @@ const main = ({ draw, drawRoundedRectangle, makeBaseBox }, {}) => {
     .translateZ(ringHeight - armHeight);
 
   const arm2 = draw([0, 0])
-    .lineTo([armDepth, armHeight * 0.5])
+    .lineTo([armDepth, armHeight * 0.3])
+    .lineTo([armDepth, armHeight * 0.6])
     .lineTo([0, armHeight])
     .close()
     .sketchOnPlane('XZ')
