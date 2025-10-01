@@ -17,7 +17,7 @@ const main = ({ makeBox, makeCylinder }, { innerRadius, height }) => {
   // Array of radii for the tubes, useful for testing multiple versions
   const radii = [innerRadius];
   // If you create multiple tubes, small markers will be added to them
-  const showMarkers = radii.length > 0;
+  const showMarkers = radii.length > 1;
 
   // Group
   let tubes;
