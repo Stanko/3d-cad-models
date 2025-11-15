@@ -178,7 +178,12 @@ const main = (
       // opacity: 0.5
     },
     {
-      shape: stick.fuse(stick.clone().translateY(stickWidth + 2)),
+      shape: stick,
+      name: "Stick",
+      color: "#c67",
+    },
+    {
+      shape: stick.clone().translateY(stickWidth + 2),
       name: "Stick",
       color: "#c67",
     },
