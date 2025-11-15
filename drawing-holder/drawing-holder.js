@@ -88,7 +88,13 @@ const main = (
     tolerance,
   },
 ) => {
-  const offset = 0.01;
+  // Ratio might not be intuitive to some people, so here is angle to ratio conversion
+  // The fixed ratio of 10 is ~5.7 degrees
+  //
+  // const angle = 5.7;
+  // const angleRadians = angle * Math.PI / 180;
+  // const ratio = Math.cos(angleRadians) / Math.sin(angleRadians);
+
   const toleranceHalf = tolerance / 2;
 
   const holderOutline = draw([0, 0])
