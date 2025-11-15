@@ -131,18 +131,11 @@ const main = (
     .lineTo([a2, 0])
     .close();
 
-  const box = makeBox([stickWidth * 3, stickWidth * 3, 0.5]).translate([
-    stickWidth * -2,
-    stickWidth * -2,
-    -offset,
-  ]);
-
   const stickFillet = Math.min(stickWidth * 0.499, fillet);
 
   const stick = stickOutline
     .sketchOnPlane("XZ")
     .extrude(stickWidth)
-    .cut(box)
     .fillet(stickFillet, (e) => e.containsPoint([b2 / ratio, 0, b2]))
     .fillet(stickFillet, (e) => e.containsPoint([b2 / ratio, -stickWidth, b2]))
     .translateY(stickWidth * 2);
