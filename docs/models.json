@@ -1,0 +1,88 @@
+[
+  {
+    "name": "Around the house",
+    "models": [
+      {
+        "name": "Baby monitor ring",
+        "svg": "./svg/around-the-house-baby-monitor-ring.svg",
+        "url": "https://raw.githubusercontent.com/Stanko/3d-cad-models/dev/around-the-house/baby-monitor-ring.js",
+        "description": ""
+      },
+      {
+        "name": "Chimney pipe lid",
+        "svg": "./svg/around-the-house-chimney-pipe-lid.svg",
+        "url": "https://raw.githubusercontent.com/Stanko/3d-cad-models/dev/around-the-house/chimney-pipe-lid.js",
+        "description": ""
+      },
+      {
+        "name": "Door adapter",
+        "svg": "./svg/around-the-house-door-adapter.svg",
+        "url": "https://raw.githubusercontent.com/Stanko/3d-cad-models/dev/around-the-house/door-adapter.js",
+        "description": ""
+      },
+      {
+        "name": "Drawing holder",
+        "svg": "./svg/around-the-house-drawing-holder.svg",
+        "url": "https://raw.githubusercontent.com/Stanko/3d-cad-models/dev/around-the-house/drawing-holder.js",
+        "description": ""
+      },
+      {
+        "name": "Gan charger eu plug lock",
+        "svg": "./svg/around-the-house-gan-charger-eu-plug-lock.svg",
+        "url": "https://raw.githubusercontent.com/Stanko/3d-cad-models/dev/around-the-house/gan-charger-eu-plug-lock.js",
+        "description": ""
+      },
+      {
+        "name": "Uneven wooden leg fix",
+        "svg": "./svg/around-the-house-uneven-wooden-leg-fix.svg",
+        "url": "https://raw.githubusercontent.com/Stanko/3d-cad-models/dev/around-the-house/uneven-wooden-leg-fix.js",
+        "description": ""
+      }
+    ]
+  },
+  {
+    "name": "Fun",
+    "models": [
+      {
+        "name": "Spacedeck ship",
+        "svg": "./svg/fun-spacedeck-ship.svg",
+        "url": "https://raw.githubusercontent.com/Stanko/3d-cad-models/dev/fun/spacedeck-ship.js",
+        "description": "<p>Voxelated ship from my game SpaceDeck X.</p>\n<p>This model was given as a trophy for a hi-score tournament when the game was released on the arcade cabinet.</p>"
+      }
+    ]
+  },
+  {
+    "name": "Plotter",
+    "models": [
+      {
+        "name": "Isograph ink reservoir",
+        "svg": "./svg/plotter-isograph-ink-reservoir.svg",
+        "url": "https://raw.githubusercontent.com/Stanko/3d-cad-models/dev/plotter/isograph-ink-reservoir.js",
+        "description": "<p>When pen-plotting, the default isograph ink reservoir feels small and for larger plots it needs to be refilled.</p>"
+      },
+      {
+        "name": "Spring loaded pen holder",
+        "svg": "./svg/plotter-spring-loaded-pen-holder.svg",
+        "url": "https://raw.githubusercontent.com/Stanko/3d-cad-models/dev/plotter/spring-loaded-pen-holder.js",
+        "description": ""
+      }
+    ]
+  },
+  {
+    "name": "Sundials",
+    "models": [
+      {
+        "name": "Sundial gnomon prism",
+        "svg": "./svg/sundials-sundial-gnomon-prism.svg",
+        "url": "https://raw.githubusercontent.com/Stanko/3d-cad-models/dev/sundials/sundial-gnomon-prism.js",
+        "description": ""
+      },
+      {
+        "name": "Sundial gnomon",
+        "svg": "./svg/sundials-sundial-gnomon.svg",
+        "url": "https://raw.githubusercontent.com/Stanko/3d-cad-models/dev/sundials/sundial-gnomon.js",
+        "description": "<p>Sundial gnomon made for my father. Three parts, snap fit.</p>"
+      }
+    ]
+  }
+]

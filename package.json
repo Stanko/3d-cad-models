@@ -3,9 +3,11 @@
   "version": "1.0.0",
   "type": "module",
   "description": "Random parametric 3D models I created.",
-  "main": "index.js",
   "scripts": {
-    "extract-data": "node ./extract-data.js"
+    "extract-data": "node ./extract-data.js",
+    "generator": "node ./generator.js",
+    "build": "npm run extract-data && npm run generator",
+    "prepare": "cp ./pre-commit ./.git/hooks/pre-commit && chmod +x ./.git/hooks/pre-commit"
   },
   "author": "Stanko",
   "license": "MIT",

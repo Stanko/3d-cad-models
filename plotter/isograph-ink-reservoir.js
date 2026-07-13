@@ -1,3 +1,6 @@
+/**
+ * When pen-plotting, the default isograph ink reservoir feels small and for larger plots it needs to be refilled.
+ */
 export const defaultParams = {
   innerRadius: 3.825,
   height: 100,

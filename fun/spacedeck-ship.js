@@ -1,11 +1,11 @@
-export const defaultParams = {
-  preview: true,
-};
-
 /** Voxelated ship from my game SpaceDeck X.
  *
  * This model was given as a trophy for a hi-score tournament when the game was released on the arcade cabinet.
  */
+
+export const defaultParams = {
+  preview: true,
+};
 
 /** @typedef { typeof import("replicad") } replicadLib */
 /** @type {(replicad: replicadLib) => any} */

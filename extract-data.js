@@ -13,10 +13,11 @@ import { basename, dirname, join, relative, sep } from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import { promisify } from "node:util";
 
-const root = dirname(fileURLToPath(import.meta.url));
-const svgDirectory = join(root, "public", "svg");
-const modelsFile = join(root, "public", "models.json");
-const replicad = join(root, "node_modules", ".bin", "replicad");
+const ROOT = dirname(fileURLToPath(import.meta.url));
+const IGNORE_DIRS = ["node_modules", "docs", "generator"];
+const SVG_DIR = join(ROOT, "docs", "svg");
+const JSON_PATH = join(ROOT, "docs", "models.json");
+const replicad = join(ROOT, "node_modules", ".bin", "replicad");
 const run = promisify(execFile);
 
 const sentenceCase = (value) => {
@@ -26,38 +27,40 @@ const sentenceCase = (value) => {
 
 const jsdocDescription = (source) => {
   const match = source.match(/^\uFEFF?\/\*\*([\s\S]*?)\*\//);
-  if (!match) return undefined;
+  if (!match) {
+    return "";
+  }
 
   return match[1]
     .split("\n")
     .map((line) => line.replace(/^\s*\* ?/, ""))
-    .join("\n")
-    .trim();
+    .filter((line) => line.trim() !== "")
+    .map((line) => `<p>${line.trim()}</p>`)
+    .join("\n");
 };
 
-const directories = (await readdir(root, { withFileTypes: true }))
+const directories = (await readdir(ROOT, { withFileTypes: true }))
   .filter(
     (entry) =>
       entry.isDirectory() &&
       !entry.name.startsWith(".") &&
-      entry.name !== "node_modules" &&
-      entry.name !== "public",
+      !IGNORE_DIRS.includes(entry.name),
   )
   .sort((a, b) => a.name.localeCompare(b.name));
 
-await rm(svgDirectory, { recursive: true, force: true });
-await mkdir(svgDirectory, { recursive: true });
+await rm(SVG_DIR, { recursive: true, force: true });
+await mkdir(SVG_DIR, { recursive: true });
 
 const temporaryDirectory = await mkdtemp(join(tmpdir(), "replicad-generator-"));
 const groups = [];
 
 try {
   const start = Date.now();
+  const renderJobs = [];
 
   for (const directory of directories) {
     const groupName = sentenceCase(directory.name);
-    console.log(groupName);
-    const directoryPath = join(root, directory.name);
+    const directoryPath = join(ROOT, directory.name);
     const files = (await readdir(directoryPath, { withFileTypes: true }))
       .filter((entry) => entry.isFile() && entry.name.endsWith(".js"))
       .sort((a, b) => a.name.localeCompare(b.name));
@@ -92,22 +95,23 @@ export const main = async (replicad, params) => {
 `,
       );
 
-      await run(
-        replicad,
-        ["--projection", wrapperPath, join(svgDirectory, svgName)],
-        { cwd: root, maxBuffer: 10 * 1024 * 1024 },
-      );
-      console.log(`- ${svgName}`);
-      await access(join(svgDirectory, svgName));
+      renderJobs.push(async () => {
+        await run(
+          replicad,
+          ["--projection", wrapperPath, join(SVG_DIR, svgName)],
+          { cwd: ROOT, maxBuffer: 10 * 1024 * 1024 },
+        );
+        await access(join(SVG_DIR, svgName));
+        console.log(`Rendered ${svgName}`);
+      });
 
-      const description = jsdocDescription(source);
       const model = {
         name: sentenceCase(fileStem),
+        svg: `./svg/${svgName}`,
+        url: `https://raw.githubusercontent.com/Stanko/3d-cad-models/dev/${relative(ROOT, filePath).split(sep).join("/")}`,
+        description: jsdocDescription(source),
       };
 
-      if (description) model.description = description;
-      model.svg = `/public/svg/${svgName}`;
-      model.jsfile = `/${relative(root, filePath).split(sep).join("/")}`;
       models.push(model);
     }
 
@@ -117,9 +121,10 @@ export const main = async (replicad, params) => {
     });
   }
 
-  await writeFile(modelsFile, `${JSON.stringify(groups, null, 2)}\n`);
+  await Promise.all(renderJobs.map((render) => render()));
+  await writeFile(JSON_PATH, `${JSON.stringify(groups, null, 2)}\n`);
   const end = Date.now();
-  console.log(`Done in ${end - start}ms`);
+  console.log(`Processed ${renderJobs.length} models in ${end - start}ms`);
 } finally {
   await rm(temporaryDirectory, { recursive: true, force: true });
 }

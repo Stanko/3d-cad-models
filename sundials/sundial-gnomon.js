@@ -1,3 +1,6 @@
+/**
+ * Sundial gnomon made for my father. Three parts, snap fit.
+ */
 export const defaultParams = {
   angle: 45,
   radius: 40,
@@ -9,10 +12,6 @@ export const defaultParams = {
   topRadius: 8,
   topHeight: 20,
 };
-
-/**
- * Sundial gnomon made for my father. Three parts, snap fit.
- */
 
 // TODO - rename parameter and variable names
 

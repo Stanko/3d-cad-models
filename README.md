@@ -12,3 +12,11 @@ Random parametric 3D models I created.
 |GaN charger EU plug lock|replicad|![](./gan-charger-eu-plug-lock/preview.png)|[gan-charger-eu-plug-lock.js](./gan-charger-eu-plug-lock/gan-charger-eu-plug-lock.js)|[Edit](https://studio.replicad.xyz/workbench?from-url=https://raw.githubusercontent.com/Stanko/3d-cad-models/dev/gan-charger-eu-plug-lock/gan-charger-eu-plug-lock.js)|
 |Isograph ink reservoir|replicad|![](./isograph-ink-reservoir/preview.png)|[isograph-ink-reservoir.js](./isograph-ink-reservoir/isograph-ink-reservoir.js)|[Edit](https://studio.replicad.xyz/workbench?from-url=https://raw.githubusercontent.com/Stanko/3d-cad-models/dev/isograph-ink-reservoir/isograph-ink-reservoir.js)|
 |Drawing holder|replicad|![](./drawing-holder/preview.png)|[drawing-holder.js](./drawing-holder/drawing-holder.js)|[Edit](https://studio.replicad.xyz/workbench?from-url=https://raw.githubusercontent.com/Stanko/3d-cad-models/dev/drawing-holder/drawing-holder.js)|
+
+
+## TODO 
+
+* [ ] Add favicon
+* [ ] Add meta data and images
+* [ ] Move generator files to a `generator` folder
+* [ ] Add SCad model too
