@@ -1,4 +1,4 @@
-const defaultParams = {
+export const defaultParams = {
   r: 90,
   angle: 42.3167,
   width: 10,
@@ -15,7 +15,7 @@ const fit = 0.1;
 
 /** @typedef { typeof import("replicad") } replicadLib */
 /** @type {function(replicadLib, typeof defaultParams): any} */
-const main = (
+export const main = (
   { draw, makeBaseBox },
   { r, angle, width, cut, curveHeightFactor, curveDepthFactor, topWidth }
 ) => {

@@ -1,6 +1,8 @@
+export const defaultParams = {};
+
 /** @typedef { typeof import("replicad") } replicadLib */
 /** @type {function(replicadLib, typeof defaultParams): any} */
-const main = ({ makeCylinder, drawCircle }) => {
+export const main = ({ makeCylinder, drawCircle }) => {
   const makeCone = (r1, r2, h) => {
     const bot = drawCircle(r1).sketchOnPlane("XY");
     return drawCircle(r2).sketchOnPlane("XY", h).loftWith(bot);

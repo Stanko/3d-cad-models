@@ -1,3 +1,24 @@
+export const defaultParams = {
+  // Both penRadius and holeRadius are set for Pigma Micron markers
+
+  // Inner radius of the tool, make sure it is nice and tight for the pen you are using
+  penRadius: 10.65,
+  // Hole radius, through which the tip of the pen goes through
+  holeRadius: 8.7,
+  bottomPartHeight: 100,
+  topPartHeight: 20,
+  wall: 1,
+  // Parts are connected using magnets, in the past I used 5x2mm ones from here:
+  // https://www.aliexpress.com/item/32961652499.html
+  magnetRadius: 5,
+  magnetHeight: 2,
+  springShaftRadius: 1.5,
+  springShaftHoleRadius: 0.5,
+  peekHeight: 5,
+  // These are here to make the tool more interesting and to reduce 3d printing time
+  speedHoles: false,
+};
+
 const { draw, drawCircle, drawRectangle } = replicad;
 
 // Tiny value to prevent z fighting
@@ -164,28 +185,7 @@ function getSpringyPart(params) {
   return base.fuse(shaft).cut(shaftHole);
 }
 
-const defaultParams = {
-  // Both penRadius and holeRadius are set for Pigma Micron markers
-
-  // Inner radius of the tool, make sure it is nice and tight for the pen you are using
-  penRadius: 10.65,
-  // Hole radius, through which the tip of the pen goes through
-  holeRadius: 8.7,
-  bottomPartHeight: 100,
-  topPartHeight: 20,
-  wall: 1,
-  // Parts are connected using magnets, in the past I used 5x2mm ones from here:
-  // https://www.aliexpress.com/item/32961652499.html
-  magnetRadius: 5,
-  magnetHeight: 2,
-  springShaftRadius: 1.5,
-  springShaftHoleRadius: 0.5,
-  peekHeight: 5,
-  // These are here to make the tool more interesting and to reduce 3d printing time
-  speedHoles: false,
-};
-
-const main = ({}, params) => {
+export const main = ({}, params) => {
   const {
     penRadius,
     wall,

@@ -1,36 +1,4 @@
-/*
-
-Holder profile
-                   d2
-                   ___          _
-            d1    /   \         .
-  _        ____  /     \        .
-  .       /   / /       \       .
-  .      /   /p/         \      h3
-  h2    /   /_/           \     .
-  .    /     .h1           \    .
-  . . /______.______________\ . .
-
-
-Stick profile
-             ____  _
-            /   /  .
-           /   /   .
-          /   /    .
-         /   /     .
-        /   /      .
-       /   /       .
-      /   /        b2
-     /   /         .
-    /   /          .
-   /_  /   _       .
-  a1/ /    . b1    .
-   /_/ . . . . . . .
-   a2
-
-*/
-
-const defaultParams = {
+export const defaultParams = {
   // holder
 
   h1: 5,
@@ -65,9 +33,41 @@ const defaultParams = {
   tolerance: 0.3,
 };
 
+/*
+
+Holder profile
+                   d2
+                   ___          _
+            d1    /   \         .
+  _        ____  /     \        .
+  .       /   / /       \       .
+  .      /   /p/         \      h3
+  h2    /   /_/           \     .
+  .    /     .h1           \    .
+  . . /______.______________\ . .
+
+
+Stick profile
+             ____  _
+            /   /  .
+           /   /   .
+          /   /    .
+         /   /     .
+        /   /      .
+       /   /       .
+      /   /        b2
+     /   /         .
+    /   /          .
+   /_  /   _       .
+  a1/ /    . b1    .
+   /_/ . . . . . . .
+   a2
+
+*/
+
 /** @typedef { typeof import("replicad") } replicadLib */
 /** @type {function(replicadLib, typeof defaultParams): any} */
-const main = (
+export const main = (
   { makeBox, draw },
   {
     h1,
@@ -143,8 +143,8 @@ const main = (
     .sketchOnPlane("XZ")
     .extrude(stickWidth)
     .fillet(stickFillet, (e) => e.containsPoint([b2 / ratio, 0, b2]))
-    .fillet(stickFillet, (e) => e.containsPoint([b2 / ratio, -stickWidth, b2]))
-    .translateY(stickWidth * 2);
+    .fillet(stickFillet, (e) => e.containsPoint([b2 / ratio, -stickWidth, b2]));
+  // .translateY(stickWidth * 2);
 
   const holeOutline = draw([-toleranceHalf, -toleranceHalf])
     .line((b1 + tolerance) / ratio, b1 + tolerance)
@@ -177,12 +177,22 @@ const main = (
       // opacity: 0.5
     },
     {
-      shape: stick,
+      shape: stick
+        .clone()
+        // move to the position
+        .translateZ(h3 - b1)
+        .translateX(d1 + p + (h3 - b1) / ratio + a1 + toleranceHalf)
+        .translateY(-stickEdgeDistance + toleranceHalf),
       name: "Stick",
       color: "#c67",
     },
     {
-      shape: stick.clone().translateY(stickWidth + 2),
+      shape: stick
+        .clone()
+        // move to the position
+        .translateZ(h3 - b1)
+        .translateX(d1 + p + (h3 - b1) / ratio + a1 + toleranceHalf)
+        .translateY(-width + stickWidth + stickEdgeDistance + toleranceHalf),
       name: "Stick",
       color: "#c67",
     },

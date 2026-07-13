@@ -1,4 +1,4 @@
-const defaultParams = {
+export const defaultParams = {
   innerRadius: 3.825,
   height: 100,
 };
@@ -13,7 +13,7 @@ Original ink container dimensions:
 
 /** @typedef { typeof import("replicad") } replicadLib */
 /** @type {function(replicadLib, typeof defaultParams): any} */
-const main = ({ makeBox, makeCylinder }, { innerRadius, height }) => {
+export const main = ({ makeBox, makeCylinder }, { innerRadius, height }) => {
   // Array of radii for the tubes, useful for testing multiple versions
   const radii = [innerRadius];
   // If you create multiple tubes, small markers will be added to them

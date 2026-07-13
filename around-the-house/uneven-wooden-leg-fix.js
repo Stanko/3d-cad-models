@@ -1,6 +1,8 @@
+export const defaultParams = {};
+
 const nothing = 0.00001;
 
-const main = ({ drawCircle, drawRoundedRectangle }) => {
+export const main = ({ drawCircle, drawRoundedRectangle }) => {
   const woodThickness = 20.5;
   const wall = 8;
   const height = 40;

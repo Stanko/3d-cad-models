@@ -1,10 +1,10 @@
-const fit = 0.5;
+export const defaultParams = {};
 
-const defaultParams = {};
+const fit = 0.5;
 
 /** @typedef { typeof import("replicad") } replicadLib */
 /** @type {function(replicadLib, typeof defaultParams): any} */
-const main = ({ draw, drawRoundedRectangle, makeBaseBox }, {}) => {
+export const main = ({ draw, drawRoundedRectangle, makeBaseBox }, {}) => {
   const armWidth = 10;
   const armDepth = 1;
   const armHeight = armDepth * 5;

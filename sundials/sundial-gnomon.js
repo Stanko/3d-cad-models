@@ -1,6 +1,4 @@
-// TODO - rename parameter and variable names
-
-const defaultParams = {
+export const defaultParams = {
   angle: 45,
   radius: 40,
   totalLength: 100,
@@ -12,6 +10,12 @@ const defaultParams = {
   topHeight: 20,
 };
 
+/**
+ * Sundial gnomon made for my father. Three parts, snap fit.
+ */
+
+// TODO - rename parameter and variable names
+
 const nothing = 0.001;
 const fit = 0.1;
 
@@ -20,7 +24,7 @@ const shaftConnectionShorter = shaftConnectionLonger * 0.8;
 
 /** @typedef { typeof import("replicad") } replicadLib */
 /** @type {function(replicadLib, typeof defaultParams): any} */
-const main = (
+export const main = (
   { Sketcher, draw, drawCircle, drawRectangle },
   {
     angle,
@@ -32,7 +36,7 @@ const main = (
     topRadius,
     topHeight,
     shaftRadius,
-  }
+  },
 ) => {
   // Triangle
   const angleInRad = (angle / 180) * Math.PI;
@@ -44,7 +48,7 @@ const main = (
   const thickness = shaftRadius * 2;
 
   const cutTheTriangle = drawCircle(thickness)
-    .sketchOnPlane('XY')
+    .sketchOnPlane("XY")
     .extrude(30)
     .translateZ(radius)
     .translateX(-thickness / 2)
@@ -59,11 +63,11 @@ const main = (
       [
         [x, y * 0.75],
         [x, y * 0.25 + 3],
-      ]
+      ],
     )
     .lineTo([x * 1.5 + 1, 0])
     .close()
-    .sketchOnPlane('XZ')
+    .sketchOnPlane("XZ")
     .extrude(thickness * 0.5)
     .translateY(thickness * 0.25)
     .cut(cutTheTriangle);
@@ -72,12 +76,12 @@ const main = (
   const hypotenuse = Math.sqrt(b * b + thickness * thickness);
 
   const screw = drawCircle(screwShaftDiameter / 2)
-    .sketchOnPlane('XY')
+    .sketchOnPlane("XY")
     .extrude(30)
     .translateZ(-nothing);
 
   const screwHead = drawCircle(screwHeadDiameter / 2)
-    .sketchOnPlane('XY')
+    .sketchOnPlane("XY")
     .extrude(30);
 
   const baseScrew1 = screw.clone().translateX(hypotenuse / -2);
@@ -97,7 +101,7 @@ const main = (
     .translateX(radius - 3);
 
   const basePlaneCube = drawRectangle(200, 200)
-    .sketchOnPlane('XY')
+    .sketchOnPlane("XY")
     .extrude(50)
     .translateZ(-50);
 
@@ -106,17 +110,17 @@ const main = (
 
   const getRodeBase = (height = rodBaseHeight) => {
     const rodBase = drawCircle(thickness / 2 - wallThickness)
-      .sketchOnPlane('XY')
+      .sketchOnPlane("XY")
       .extrude(height);
     return rodBase;
   };
 
   const rodBase = getRodeBase().translateZ(
-    rodBaseHeight - shaftConnectionLonger
+    rodBaseHeight - shaftConnectionLonger,
   );
 
   const base = drawCircle(thickness / 2)
-    .sketchOnPlane('XY')
+    .sketchOnPlane("XY")
     .extrude(rodBaseHeight)
     .cut(rodBase)
     .translateX(thickness * -0.5)
@@ -134,10 +138,10 @@ const main = (
   const extensionOuterHeight = totalLength - hypotenuse - topHeight;
   const extensionInneright = extensionOuterHeight + shaftConnectionShorter * 2;
   const extensionOuter = drawCircle(shaftRadius)
-    .sketchOnPlane('XY')
+    .sketchOnPlane("XY")
     .extrude(extensionOuterHeight);
   const extensionInner = drawCircle(shaftRadius - wallThickness - fit)
-    .sketchOnPlane('XY')
+    .sketchOnPlane("XY")
     .extrude(extensionInneright)
     .translateZ(-shaftConnectionShorter);
 
@@ -147,7 +151,7 @@ const main = (
     .lineTo([topRadius, 0])
     .lineTo([0, topHeight])
     .close()
-    .sketchOnPlane('XZ')
+    .sketchOnPlane("XZ")
     .revolve();
 
   const topCut = getRodeBase(shaftConnectionLonger);
@@ -155,21 +159,21 @@ const main = (
   return [
     {
       shape: base,
-      color: '#56b',
-      name: 'Base',
+      color: "#56b",
+      name: "Base",
     },
     {
       shape: extensionOuter
         .fuse(extensionInner)
-        .translateY(-20)
+        .translateY(-40)
         .translateZ(shaftConnectionShorter),
-      color: '#5b6',
-      name: 'Shaft',
+      color: "#5b6",
+      name: "Shaft",
     },
     {
-      shape: cone.cut(topCut).translateY(20),
-      color: '#b56',
-      name: 'Top',
+      shape: cone.cut(topCut).translateY(-20),
+      color: "#b56",
+      name: "Top",
     },
   ];
 };

@@ -1,6 +1,9 @@
+export const defaultParams = {};
+
 /** @typedef { typeof import("replicad") } replicadLib */
 /** @type {function(replicadLib, typeof defaultParams): any} */
-const main = ({ makeCylinder, makeBox }) => {
+
+export const main = ({ makeCylinder, makeBox }) => {
   const none = 0.001;
 
   const innerRadius = 23;
