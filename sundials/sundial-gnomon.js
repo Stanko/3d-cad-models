@@ -1,5 +1,5 @@
 /**
- * Sundial gnomon made for my father. Three parts, snap fit.
+ * Another version of the gnomon for my father. Three parts, snap fit.
  */
 export const defaultParams = {
   angle: 45,

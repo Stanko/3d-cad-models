@@ -19,4 +19,6 @@ Random parametric 3D models I created.
 * [ ] Add favicon
 * [ ] Add meta data and images
 * [ ] Move generator files to a `generator` folder
-* [ ] Add SCad model too
+* [ ] Maybe inline SVGs
+* [ ] Blueprint design
+* [ ] Change SVG stroke-width from 0.2% to 0.3%

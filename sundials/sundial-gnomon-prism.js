@@ -1,3 +1,7 @@
+/**
+ * Sundial gnomon made for my father.
+ */
+
 export const defaultParams = {
   r: 90,
   angle: 42.3167,
@@ -17,7 +21,7 @@ const fit = 0.1;
 /** @type {function(replicadLib, typeof defaultParams): any} */
 export const main = (
   { draw, makeBaseBox },
-  { r, angle, width, cut, curveHeightFactor, curveDepthFactor, topWidth }
+  { r, angle, width, cut, curveHeightFactor, curveDepthFactor, topWidth },
 ) => {
   const angleInRad = (angle / 180) * Math.PI;
 
@@ -44,7 +48,7 @@ export const main = (
   triangle1 = triangle1
     .lineTo([-t1.width / 2, 0])
     .close()
-    .sketchOnPlane('YZ');
+    .sketchOnPlane("YZ");
 
   const triangle2 = draw()
     .movePointerTo([t2.width / 2, 0])
@@ -52,7 +56,7 @@ export const main = (
     .lineTo([-nothing, t2.height])
     .lineTo([-t2.width / 2, 0])
     .close()
-    .sketchOnPlane('YZ', t2.position);
+    .sketchOnPlane("YZ", t2.position);
 
   const base = triangle1.loftWith(triangle2);
 
@@ -69,19 +73,19 @@ export const main = (
       [
         [0, h * 0.8],
         [k, h * 0.7],
-      ]
+      ],
     )
     .bezierCurveTo(
       [0, 0],
       [
         [k, h * 0.3],
         [0, h * 0.2],
-      ]
+      ],
     )
     .lineTo([-1, 0])
     .lineTo([-1, t1.height])
     .close()
-    .sketchOnPlane('XZ')
+    .sketchOnPlane("XZ")
     .extrude(width * 2)
     .translateY(width);
 
@@ -100,7 +104,7 @@ export const main = (
     // },
     {
       shape: base.cut(box).cut(curve),
-      color: '#3c6',
+      color: "#3c6",
     },
   ];
 };

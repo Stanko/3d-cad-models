@@ -62,7 +62,7 @@ select {
   --item-bg: white;
   --item-border: #ddd;
   --link-decoration: #bbb;
-  --accent: #e67e22;
+  --accent: #ff3c3c;
 }
 
 body {
@@ -162,9 +162,10 @@ main {
   gap: 0.5rem;
 }
 
-.model__svg {
+.model__img {
   aspect-ratio: 16/9;
   padding: 1rem;
+  object-fit: contain;
 }
 
 .model__links {

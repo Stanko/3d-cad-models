@@ -1,3 +1,7 @@
+/**
+ * Simple holder I designed to put and photograph my pen plotted drawings.
+ */
+
 export const defaultParams = {
   // holder
 

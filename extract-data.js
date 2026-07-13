@@ -10,6 +10,7 @@ import {
 } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { basename, dirname, join, relative, sep } from "node:path";
+import { describe } from "node:test";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import { promisify } from "node:util";
 
@@ -113,6 +114,18 @@ export const main = async (replicad, params) => {
       };
 
       models.push(model);
+    }
+
+    if (groupName === "Plotter") {
+      // The only SCAD model is hardcoded
+      models.push({
+        name: "Axidraw Pen Holder (SCAD)",
+        svg: `./axidraw-pen-holder.png`,
+        url: `https://raw.githubusercontent.com/Stanko/3d-cad-models/dev/plotter/axidraw-pen-holder.scad`,
+        notEditable: true,
+        description:
+          "Pigma Micron holder for the Axidraw plotter. The only SCAD model and therefore not editable in the browser.",
+      });
     }
 
     groups.push({

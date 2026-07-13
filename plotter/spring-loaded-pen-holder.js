@@ -1,3 +1,7 @@
+/**
+ * Spring loaded pen holder for an old plotter in a local hacker space.
+ */
+
 export const defaultParams = {
   // Both penRadius and holeRadius are set for Pigma Micron markers
 
@@ -41,7 +45,7 @@ function getMagnetHolder({ shaftRadius, wall, magnetRadius, magnetHeight }) {
   const bottomHeight = Math.sin(angle) * bottomExtrusion;
 
   const magnet = drawCircle(magnetRadius)
-    .sketchOnPlane('XY')
+    .sketchOnPlane("XY")
     .extrude(magnetHeight)
     .translateZ(-magnetHeight + NOTHING)
     .translate(offsetForJoining * 0.5);
@@ -51,7 +55,7 @@ function getMagnetHolder({ shaftRadius, wall, magnetRadius, magnetHeight }) {
   });
 
   const holderBottom = holderProfile
-    .sketchOnPlane('XY')
+    .sketchOnPlane("XY")
     .extrude(bottomExtrusion, {
       extrusionDirection,
     })
@@ -59,7 +63,7 @@ function getMagnetHolder({ shaftRadius, wall, magnetRadius, magnetHeight }) {
     .translateZ(-topHeight + NOTHING);
 
   const holderTop = holderProfile
-    .sketchOnPlane('XY')
+    .sketchOnPlane("XY")
     .extrude(topHeight, {
       extrusionDirection: [0, 0, -1],
     })
@@ -73,7 +77,7 @@ function getMagnetHolder({ shaftRadius, wall, magnetRadius, magnetHeight }) {
   const fuseX = (1 - Math.cos(arcAngle)) * shaftRadius;
 
   const shaft = drawCircle(shaftRadius - NOTHING)
-    .sketchOnPlane('XY')
+    .sketchOnPlane("XY")
     .extrude(shaftHeight)
     .translateX(-shaftRadius)
     .translateZ(-shaftHeight + NOTHING);
@@ -85,9 +89,9 @@ function getMagnetHolder({ shaftRadius, wall, magnetRadius, magnetHeight }) {
 
 function getShaft({ penRadius, shaftRadius, height, wall }) {
   const inner = drawCircle(penRadius)
-    .sketchOnPlane('XY')
+    .sketchOnPlane("XY")
     .extrude(-height + wall);
-  const shaft = drawCircle(shaftRadius).sketchOnPlane('XY').extrude(-height);
+  const shaft = drawCircle(shaftRadius).sketchOnPlane("XY").extrude(-height);
 
   return shaft.cut(inner);
 }
@@ -98,7 +102,7 @@ function getPart(params) {
   const leftHolder = getMagnetHolder(params).translateX(shaftRadius);
 
   const rightHolder = getMagnetHolder(params)
-    .mirror('YZ')
+    .mirror("YZ")
     .translateX(-shaftRadius);
 
   const shaft = getShaft(params);
@@ -114,7 +118,7 @@ function getBottomPart(params) {
   if (speedHoles) {
     const speedHoleRadius = penRadius * 0.48;
     const speedHole = drawCircle(speedHoleRadius)
-      .sketchOnPlane('XZ')
+      .sketchOnPlane("XZ")
       .extrude(5)
       .translateY(2.5);
     const r = penRadius + wall * 0.5;
@@ -146,7 +150,7 @@ function getBottomPart(params) {
   }
 
   const hole = drawCircle(holeRadius)
-    .sketchOnPlane('XY')
+    .sketchOnPlane("XY")
     .extrude(10)
     .translateZ(-5);
 
@@ -167,17 +171,17 @@ function getSpringyPart(params) {
   const baseHeight = 1.5;
   const shaftHeight = topPartHeight + peekHeight;
 
-  const base = drawCircle(radius).sketchOnPlane('XY').extrude(baseHeight);
+  const base = drawCircle(radius).sketchOnPlane("XY").extrude(baseHeight);
 
   const shaft = drawCircle(springShaftRadius)
-    .sketchOnPlane('XY')
+    .sketchOnPlane("XY")
     .extrude(shaftHeight)
     .fillet(baseHeight * 0.5)
     .translateZ(NOTHING);
 
   const shaftHoleSize = springShaftRadius * 10;
   const shaftHole = drawCircle(springShaftHoleRadius)
-    .sketchOnPlane('YZ')
+    .sketchOnPlane("YZ")
     .extrude(shaftHoleSize)
     .translateX(shaftHoleSize * -0.5)
     .translateZ(shaftHeight - peekHeight * 0.5);
@@ -202,7 +206,7 @@ export const main = ({}, params) => {
   });
 
   const topHole = drawCircle(springShaftRadius + 0.5)
-    .sketchOnPlane('XY')
+    .sketchOnPlane("XY")
     .extrude(topPartHeight)
     .translateZ(-NOTHING);
   const top = getPart({

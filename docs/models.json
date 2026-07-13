@@ -24,7 +24,7 @@
         "name": "Drawing holder",
         "svg": "./svg/around-the-house-drawing-holder.svg",
         "url": "https://raw.githubusercontent.com/Stanko/3d-cad-models/dev/around-the-house/drawing-holder.js",
-        "description": ""
+        "description": "<p>Simple holder I designed to put and photograph my pen plotted drawings.</p>"
       },
       {
         "name": "Gan charger eu plug lock",
@@ -64,7 +64,14 @@
         "name": "Spring loaded pen holder",
         "svg": "./svg/plotter-spring-loaded-pen-holder.svg",
         "url": "https://raw.githubusercontent.com/Stanko/3d-cad-models/dev/plotter/spring-loaded-pen-holder.js",
-        "description": ""
+        "description": "<p>Spring loaded pen holder for an old plotter in a local hacker space.</p>"
+      },
+      {
+        "name": "Axidraw Pen Holder (SCAD)",
+        "svg": "./axidraw-pen-holder.png",
+        "url": "https://raw.githubusercontent.com/Stanko/3d-cad-models/dev/plotter/axidraw-pen-holder.scad",
+        "notEditable": true,
+        "description": "Pigma Micron holder for the Axidraw plotter. The only SCAD model and therefore not editable in the browser."
       }
     ]
   },
@@ -75,13 +82,13 @@
         "name": "Sundial gnomon prism",
         "svg": "./svg/sundials-sundial-gnomon-prism.svg",
         "url": "https://raw.githubusercontent.com/Stanko/3d-cad-models/dev/sundials/sundial-gnomon-prism.js",
-        "description": ""
+        "description": "<p>Sundial gnomon made for my father.</p>"
       },
       {
         "name": "Sundial gnomon",
         "svg": "./svg/sundials-sundial-gnomon.svg",
         "url": "https://raw.githubusercontent.com/Stanko/3d-cad-models/dev/sundials/sundial-gnomon.js",
-        "description": "<p>Sundial gnomon made for my father. Three parts, snap fit.</p>"
+        "description": "<p>Another version of the gnomon for my father. Three parts, snap fit.</p>"
       }
     ]
   }

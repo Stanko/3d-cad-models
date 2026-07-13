@@ -18,18 +18,18 @@ const generator = async () => {
       html.push(`<div class="model">`);
       html.push(`<h3 class="model__name">${model.name}</h3>`);
       html.push(
-        `<img class="model__svg" src="${model.svg}" alt="${model.name}" />`,
+        `<img class="model__img" src="${model.svg}" alt="${model.name}" />`,
       );
       if (model.description) {
         html.push(`<div class="model__description">${model.description}</div>`);
       }
       html.push(`<div class="model__links">`);
-      html.push(
-        `<a href="${model.url}" class="model__name">Source</a> &bull; `,
-      );
-      html.push(
-        `<a href="https://studio.replicad.xyz/workbench?from-url=${model.url}" class="model__name">Edit</a>`,
-      );
+      html.push(`<a href="${model.url}" class="model__name">Source</a>`);
+      if (!model.notEditable) {
+        html.push(
+          `&bull; <a href="https://studio.replicad.xyz/workbench?from-url=${model.url}" class="model__name">Edit</a>`,
+        );
+      }
       html.push(`</div>`);
       html.push(`</div>`);
     });
