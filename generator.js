@@ -24,10 +24,10 @@ const generator = async () => {
         html.push(`<div class="model__description">${model.description}</div>`);
       }
       html.push(`<div class="model__links">`);
-      html.push(`<a href="${model.url}" class="model__name">Source</a>`);
+      html.push(`<a href="${model.url}">Source</a>`);
       if (!model.notEditable) {
         html.push(
-          `&bull; <a href="https://studio.replicad.xyz/workbench?from-url=${model.url}" class="model__name">Edit</a>`,
+          `&bull; <a href="https://studio.replicad.xyz/workbench?from-url=${model.url}">Edit</a>`,
         );
       }
       html.push(`</div>`);

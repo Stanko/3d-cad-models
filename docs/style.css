@@ -149,6 +149,10 @@ main {
   flex-direction: column;
 }
 
+.model:hover {
+  border-color: var(--accent);
+}
+
 .model__name {
   text-transform: uppercase;
   margin-bottom: auto;
@@ -173,6 +177,7 @@ main {
   display: flex;
   gap: 0.5rem;
   justify-content: center;
+  text-transform: uppercase;
 }
 
 .model:hover a {
