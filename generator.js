@@ -34,8 +34,8 @@ const generator = async () => {
       html.push(`</div>`);
     });
     html.push("</div>");
+    html.push("</div>");
   });
-  html.push("</div>");
 
   const template = await readFile(TEMPLATE_PATH, { encoding: "utf-8" });
   const content = template.replace("[GENERATED CONTENT]", html.join("\n"));

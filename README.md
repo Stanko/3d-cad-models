@@ -22,3 +22,4 @@ Random parametric 3D models I created.
 * [ ] Maybe inline SVGs
 * [ ] Blueprint design
 * [ ] Change SVG stroke-width from 0.2% to 0.3%
+* [ ] Add it to the muffinman projects
