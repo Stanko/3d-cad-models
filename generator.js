@@ -17,9 +17,11 @@ const generator = async () => {
     group.models.forEach((model) => {
       html.push(`<div class="model">`);
       html.push(`<h3 class="model__name">${model.name}</h3>`);
+      html.push(`<div class="model__img-wrapper">`);
       html.push(
         `<img class="model__img" src="${model.svg}" alt="${model.name}" />`,
       );
+      html.push(`</div>`);
       if (model.description) {
         html.push(`<div class="model__description">${model.description}</div>`);
       }
