@@ -262,3 +262,10 @@ footer {
     }
   }
 }
+
+.model:first-child::after {
+  content: "hello";
+  display: block;
+  border: 1px solid white;
+  float: left;
+}
