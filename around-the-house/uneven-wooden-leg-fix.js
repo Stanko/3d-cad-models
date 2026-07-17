@@ -1,8 +1,8 @@
 export const defaultParams = {};
 
-const nothing = 0.00001;
+const { drawCircle, drawRoundedRectangle } = replicad;
 
-export const main = ({ drawCircle, drawRoundedRectangle }) => {
+export const main = ({}) => {
   const woodThickness = 20.5;
   const wall = 8;
   const height = 40;
