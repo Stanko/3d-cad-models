@@ -42,3 +42,5 @@ export const main = ({ makeCylinder, drawCircle }) => {
     },
   ];
 };
+
+export default main;

@@ -77,3 +77,5 @@ export const main = ({ makeCylinder, makeBox }) => {
     },
   ];
 };
+
+export default main;

@@ -27,17 +27,17 @@ export const main = ({ draw, drawRoundedRectangle, makeBaseBox }, {}) => {
   const ringOuter = drawRoundedRectangle(
     ringOuterDepth,
     ringOuterWidth,
-    ringOuterRadius
+    ringOuterRadius,
   )
-    .sketchOnPlane('XY')
+    .sketchOnPlane("XY")
     .extrude(ringHeight);
 
   const ringInner = drawRoundedRectangle(
     ringInnerDepth,
     ringInnerWidth,
-    ringInnerRadius
+    ringInnerRadius,
   )
-    .sketchOnPlane('XY')
+    .sketchOnPlane("XY")
     .extrude(ringHeight + 2)
     .translateZ(-1);
 
@@ -59,7 +59,7 @@ export const main = ({ draw, drawRoundedRectangle, makeBaseBox }, {}) => {
     .lineTo([-armDepth, armHeight * 0.6])
     .lineTo([0, armHeight])
     .close()
-    .sketchOnPlane('XZ')
+    .sketchOnPlane("XZ")
     .extrude(armWidth)
     .translateY(armWidth / 2)
     .translateX(ringInnerDepth / 2)
@@ -70,7 +70,7 @@ export const main = ({ draw, drawRoundedRectangle, makeBaseBox }, {}) => {
     .lineTo([armDepth, armHeight * 0.6])
     .lineTo([0, armHeight])
     .close()
-    .sketchOnPlane('XZ')
+    .sketchOnPlane("XZ")
     .extrude(armWidth)
     .translateY(armWidth / 2)
     .translateX(ringInnerDepth / -2)
@@ -83,8 +83,10 @@ export const main = ({ draw, drawRoundedRectangle, makeBaseBox }, {}) => {
   return [
     {
       shape: adapter,
-      color: '#3b6',
-      name: 'adapter',
+      color: "#3b6",
+      name: "adapter",
     },
   ];
 };
+
+export default main;

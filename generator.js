@@ -28,7 +28,7 @@ const generator = async () => {
       html.push(`<div class="model__links">`);
       if (!model.notEditable) {
         html.push(
-          `<a href="https://studio.replicad.xyz/share/${encodeURIComponent(model.urlRaw)}" class="model__preview">Preview</a> &bull;`,
+          `<a href="https://studio.replicad.xyz/share/${encodeURIComponent(model.urlRaw)}?disable-auto-position=true&ortho-camera=true" class="model__preview">Preview</a> &bull;`,
         );
         html.push(
           `<a href="https://studio.replicad.xyz/workbench?from-url=${encodeURIComponent(model.urlRaw)}">Edit</a> &bull;`,

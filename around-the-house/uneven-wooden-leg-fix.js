@@ -20,29 +20,29 @@ export const main = ({ drawCircle, drawRoundedRectangle }) => {
   const screwHeadDepth = Math.min(2.5, wall * 0.5);
 
   const base = drawRoundedRectangle(thickness, height, outerRadius)
-    .sketchOnPlane('XY')
+    .sketchOnPlane("XY")
     .extrude(width)
     .fillet(wall * 0.5);
 
   const hole = drawRoundedRectangle(woodThickness, height, innerRadius)
-    .sketchOnPlane('XY')
+    .sketchOnPlane("XY")
     .extrude(width)
     .translateY(legHeight);
 
   const screwHoleInner = drawCircle(screwInnerRadius)
-    .sketchOnPlane('ZY')
+    .sketchOnPlane("ZY")
     .extrude(100)
     .translateX(50)
     .translateZ(width / 2);
 
   const screwHoleOuter1 = drawCircle(screwOuterRadius)
-    .sketchOnPlane('ZY')
+    .sketchOnPlane("ZY")
     .extrude(30)
     .translateX(woodThickness / -2 - wall + screwHeadDepth)
     .translateZ(width / 2);
 
   const screwHoleOuter2 = drawCircle(screwOuterRadius)
-    .sketchOnPlane('YZ')
+    .sketchOnPlane("YZ")
     .extrude(30)
     .translateX(woodThickness / 2 + wall - screwHeadDepth)
     .translateZ(width / 2);
@@ -55,8 +55,10 @@ export const main = ({ drawCircle, drawRoundedRectangle }) => {
   return [
     {
       shape: base.cut(hole).cut(screwHoleParts),
-      color: '#67c',
+      color: "#67c",
       // color: 'rgba(50, 70, 200, 0.5)',
     },
   ];
 };
+
+export default main;
