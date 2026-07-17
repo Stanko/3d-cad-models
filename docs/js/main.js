@@ -43,6 +43,11 @@ const closeDrawer = () => {
 };
 
 const openDrawer = (id, content, model) => {
+  if (activeDrawer === id) {
+    closeDrawer();
+    return;
+  }
+
   activeDrawer = id;
   const models = model.parentElement;
 
@@ -58,11 +63,6 @@ sources.forEach((link) => {
     e.preventDefault();
     const url = link.getAttribute("href");
     const model = link.parentElement.parentElement;
-
-    if (activeDrawer === url) {
-      closeDrawer();
-      return;
-    }
 
     if (sourceCache[url]) {
       openDrawer(url, sourceCache[url], model);
