@@ -1,4 +1,5 @@
-/** Voxelated ship from my game SpaceDeck X.
+/**
+ * Voxelated ship from my game SpaceDeck X.
  *
  * This model was given as a trophy for a hi-score tournament when the game was released on the arcade cabinet.
  */

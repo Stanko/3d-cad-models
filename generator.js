@@ -14,12 +14,12 @@ const generator = async () => {
     html.push(`<h2 class="group__name">${group.name}</h2>`);
 
     html.push(`<div class="group__models">`);
-    group.models.forEach((model) => {
-      html.push(`<div class="model">`);
+    group.models.forEach((model, index) => {
+      html.push(`<div class="model" style="order: ${index + 1}">`);
       html.push(`<h3 class="model__name">${model.name}</h3>`);
       html.push(`<div class="model__img-wrapper">`);
       html.push(
-        `<img class="model__img" src="${model.svg}" alt="${model.name}" />`,
+        `<img class="model__img ${model.notEditable ? "model__img--png" : ""}" src="${model.svg}" alt="${model.name}" />`,
       );
       html.push(`</div>`);
       if (model.description) {
@@ -28,10 +28,13 @@ const generator = async () => {
       html.push(`<div class="model__links">`);
       if (!model.notEditable) {
         html.push(
-          `<a href="https://studio.replicad.xyz/workbench?from-url=${model.url}">Edit</a> &bull;`,
+          `<a href="https://studio.replicad.xyz/share/${encodeURIComponent(model.urlRaw)}" class="model__preview">Preview</a> &bull;`,
+        );
+        html.push(
+          `<a href="https://studio.replicad.xyz/workbench?from-url=${encodeURIComponent(model.urlRaw)}">Edit</a> &bull;`,
         );
       }
-      html.push(`<a href="${model.url}">Source</a>`);
+      html.push(`<a href="${model.urlRaw}" class="model__source">Source</a>`);
       html.push(`</div>`);
       html.push(`</div>`);
     });

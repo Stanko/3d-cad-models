@@ -5,37 +5,43 @@
       {
         "name": "Baby monitor ring",
         "svg": "./svg/around-the-house-baby-monitor-ring.svg",
-        "url": "https://raw.githubusercontent.com/Stanko/3d-models/dev/around-the-house/baby-monitor-ring.js",
+        "url": "https://github.com/Stanko/3d-models/blob/dev/around-the-house/baby-monitor-ring.js",
+        "urlRaw": "https://raw.githubusercontent.com/Stanko/3d-models/dev/around-the-house/baby-monitor-ring.js",
         "description": ""
       },
       {
         "name": "Chimney pipe lid",
         "svg": "./svg/around-the-house-chimney-pipe-lid.svg",
-        "url": "https://raw.githubusercontent.com/Stanko/3d-models/dev/around-the-house/chimney-pipe-lid.js",
+        "url": "https://github.com/Stanko/3d-models/blob/dev/around-the-house/chimney-pipe-lid.js",
+        "urlRaw": "https://raw.githubusercontent.com/Stanko/3d-models/dev/around-the-house/chimney-pipe-lid.js",
         "description": ""
       },
       {
         "name": "Door adapter",
         "svg": "./svg/around-the-house-door-adapter.svg",
-        "url": "https://raw.githubusercontent.com/Stanko/3d-models/dev/around-the-house/door-adapter.js",
+        "url": "https://github.com/Stanko/3d-models/blob/dev/around-the-house/door-adapter.js",
+        "urlRaw": "https://raw.githubusercontent.com/Stanko/3d-models/dev/around-the-house/door-adapter.js",
         "description": ""
       },
       {
         "name": "Drawing holder",
         "svg": "./svg/around-the-house-drawing-holder.svg",
-        "url": "https://raw.githubusercontent.com/Stanko/3d-models/dev/around-the-house/drawing-holder.js",
+        "url": "https://github.com/Stanko/3d-models/blob/dev/around-the-house/drawing-holder.js",
+        "urlRaw": "https://raw.githubusercontent.com/Stanko/3d-models/dev/around-the-house/drawing-holder.js",
         "description": "<p>Simple holder I designed to put and photograph my pen plotted drawings.</p>"
       },
       {
         "name": "Gan charger eu plug lock",
         "svg": "./svg/around-the-house-gan-charger-eu-plug-lock.svg",
-        "url": "https://raw.githubusercontent.com/Stanko/3d-models/dev/around-the-house/gan-charger-eu-plug-lock.js",
+        "url": "https://github.com/Stanko/3d-models/blob/dev/around-the-house/gan-charger-eu-plug-lock.js",
+        "urlRaw": "https://raw.githubusercontent.com/Stanko/3d-models/dev/around-the-house/gan-charger-eu-plug-lock.js",
         "description": ""
       },
       {
         "name": "Uneven wooden leg fix",
         "svg": "./svg/around-the-house-uneven-wooden-leg-fix.svg",
-        "url": "https://raw.githubusercontent.com/Stanko/3d-models/dev/around-the-house/uneven-wooden-leg-fix.js",
+        "url": "https://github.com/Stanko/3d-models/blob/dev/around-the-house/uneven-wooden-leg-fix.js",
+        "urlRaw": "https://raw.githubusercontent.com/Stanko/3d-models/dev/around-the-house/uneven-wooden-leg-fix.js",
         "description": ""
       }
     ]
@@ -46,7 +52,8 @@
       {
         "name": "Spacedeck x ship",
         "svg": "./svg/fun-spacedeck-x-ship.svg",
-        "url": "https://raw.githubusercontent.com/Stanko/3d-models/dev/fun/spacedeck-x-ship.js",
+        "url": "https://github.com/Stanko/3d-models/blob/dev/fun/spacedeck-x-ship.js",
+        "urlRaw": "https://raw.githubusercontent.com/Stanko/3d-models/dev/fun/spacedeck-x-ship.js",
         "description": "<p>Voxelated ship from my game SpaceDeck X.</p>\n<p>This model was given as a trophy for a hi-score tournament when the game was released on the arcade cabinet.</p>"
       }
     ]
@@ -57,19 +64,22 @@
       {
         "name": "Isograph ink reservoir",
         "svg": "./svg/plotter-isograph-ink-reservoir.svg",
-        "url": "https://raw.githubusercontent.com/Stanko/3d-models/dev/plotter/isograph-ink-reservoir.js",
+        "url": "https://github.com/Stanko/3d-models/blob/dev/plotter/isograph-ink-reservoir.js",
+        "urlRaw": "https://raw.githubusercontent.com/Stanko/3d-models/dev/plotter/isograph-ink-reservoir.js",
         "description": "<p>When pen-plotting, the default isograph ink reservoir feels small and for larger plots it needs to be refilled.</p>"
       },
       {
         "name": "Spring loaded pen holder",
         "svg": "./svg/plotter-spring-loaded-pen-holder.svg",
-        "url": "https://raw.githubusercontent.com/Stanko/3d-models/dev/plotter/spring-loaded-pen-holder.js",
+        "url": "https://github.com/Stanko/3d-models/blob/dev/plotter/spring-loaded-pen-holder.js",
+        "urlRaw": "https://raw.githubusercontent.com/Stanko/3d-models/dev/plotter/spring-loaded-pen-holder.js",
         "description": "<p>Spring loaded pen holder for an old plotter in a local hacker space.</p>"
       },
       {
         "name": "Axidraw Pen Holder (SCAD)",
         "svg": "./img/axidraw-pen-holder.png",
-        "url": "https://raw.githubusercontent.com/Stanko/3d-models/dev/plotter/axidraw-pen-holder.scad",
+        "url": "https://github.com/Stanko/3d-models/blob/dev/plotter/axidraw-pen-holder.scad",
+        "urlRaw": "https://raw.githubusercontent.com/Stanko/3d-models/dev/plotter/axidraw-pen-holder.scad",
         "notEditable": true,
         "description": "Pigma Micron holder for the Axidraw plotter. The only SCAD model and therefore not editable in the browser."
       }
@@ -81,13 +91,15 @@
       {
         "name": "Sundial gnomon prism",
         "svg": "./svg/sundials-sundial-gnomon-prism.svg",
-        "url": "https://raw.githubusercontent.com/Stanko/3d-models/dev/sundials/sundial-gnomon-prism.js",
+        "url": "https://github.com/Stanko/3d-models/blob/dev/sundials/sundial-gnomon-prism.js",
+        "urlRaw": "https://raw.githubusercontent.com/Stanko/3d-models/dev/sundials/sundial-gnomon-prism.js",
         "description": "<p>Sundial gnomon made for my father.</p>"
       },
       {
         "name": "Sundial gnomon",
         "svg": "./svg/sundials-sundial-gnomon.svg",
-        "url": "https://raw.githubusercontent.com/Stanko/3d-models/dev/sundials/sundial-gnomon.js",
+        "url": "https://github.com/Stanko/3d-models/blob/dev/sundials/sundial-gnomon.js",
+        "urlRaw": "https://raw.githubusercontent.com/Stanko/3d-models/dev/sundials/sundial-gnomon.js",
         "description": "<p>Another version of the gnomon for my father. Three parts, snap fit.</p>"
       }
     ]

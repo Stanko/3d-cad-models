@@ -118,7 +118,8 @@ export const main = async (replicad, params) => {
       const model = {
         name: sentenceCase(fileStem),
         svg: `./svg/${svgName}`,
-        url: `https://raw.githubusercontent.com/Stanko/3d-models/dev/${relative(ROOT, filePath).split(sep).join("/")}`,
+        url: `https://github.com/Stanko/3d-models/blob/dev/${relative(ROOT, filePath).split(sep).join("/")}`,
+        urlRaw: `https://raw.githubusercontent.com/Stanko/3d-models/dev/${relative(ROOT, filePath).split(sep).join("/")}`,
         description: jsdocDescription(source),
       };
 
@@ -130,7 +131,8 @@ export const main = async (replicad, params) => {
       models.push({
         name: "Axidraw Pen Holder (SCAD)",
         svg: `./img/axidraw-pen-holder.png`,
-        url: `https://raw.githubusercontent.com/Stanko/3d-models/dev/plotter/axidraw-pen-holder.scad`,
+        url: `https://github.com/Stanko/3d-models/blob/dev/plotter/axidraw-pen-holder.scad`,
+        urlRaw: `https://raw.githubusercontent.com/Stanko/3d-models/dev/plotter/axidraw-pen-holder.scad`,
         notEditable: true,
         description:
           "Pigma Micron holder for the Axidraw plotter. The only SCAD model and therefore not editable in the browser.",
