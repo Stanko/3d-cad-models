@@ -67,5 +67,3 @@ export const main = ({ makeBox, makeCylinder }, { innerRadius, height }) => {
     color: "#67c",
   };
 };
-
-export default main;

@@ -88,5 +88,3 @@ export const main = ({ draw, drawRoundedRectangle, makeBaseBox }, {}) => {
     },
   ];
 };
-
-export default main;

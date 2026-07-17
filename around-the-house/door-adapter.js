@@ -165,5 +165,3 @@ export const main = (
     // drzac4.fuse(drzacGlava4).fuse(rupaZaMaticu4),
   ];
 };
-
-export default main;

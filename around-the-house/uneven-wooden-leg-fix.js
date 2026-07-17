@@ -60,5 +60,3 @@ export const main = ({ drawCircle, drawRoundedRectangle }) => {
     },
   ];
 };
-
-export default main;

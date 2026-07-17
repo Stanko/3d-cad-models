@@ -363,5 +363,3 @@ x      XOOX      x
     ];
   }
 };
-
-export default main;

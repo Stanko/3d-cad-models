@@ -223,5 +223,3 @@ export const main = ({}, params) => {
 
   return [bottom, top, springy];
 };
-
-export default main;
